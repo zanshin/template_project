@@ -1,0 +1,4 @@
+2026-04-12T21:51:05.898786Z [INFO] This is an info message
+2026-04-12T21:51:05.898903Z [WARN] This is an warn message
+2026-04-12T21:51:05.898948Z [ERROR] This is an error message
+2026-04-12T21:51:05.898998Z [ERROR] get_an_error did have an error
