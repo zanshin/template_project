@@ -2,18 +2,19 @@
 //!
 //! Call [`setup`] once at program startup to configure a [`simplelog`] combined
 //! logger that writes to both the terminal and `app.log`.
+use std::fs::File;
+
 use simplelog::{
     ColorChoice, CombinedLogger, ConfigBuilder, LevelFilter, TermLogger, TerminalMode, WriteLogger,
 };
-use std::fs::File;
 
 /// Initialises the global logger.
 ///
-/// Atached two sinks:
+/// Attaches two sinks:
 /// - **Terminal** - colored output at [`LevelFilter::Info`] and above.
 /// - **File** - plain-text output to `app.log` at the same level.
 ///
-/// # Pamics
+/// # Panics
 ///
 /// Panics if `app.log` cannot be created or if the logger has already been
 /// initialised.

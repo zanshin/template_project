@@ -1,17 +1,13 @@
 //! Application entry point.
 //!
-//! Wires together logging ([`messages`]) and error handling ([`error`]), then
-//! runs the program logic.
-pub use self::error::{Error, Result};
+//! Thin binary wrapper that wires together logging and error handling.
 use log::{error, info, warn};
-
-mod error;
-mod messages;
+use template_project::{messages, Error, Result};
 
 fn main() {
     messages::setup();
     info!("This is an info message");
-    warn!("This is an warn message");
+    warn!("This is a warn message");
     error!("This is an error message");
 
     match get_an_error() {
@@ -20,7 +16,7 @@ fn main() {
     }
 }
 
-/// Always returns an [`Error::UsageInvalid`] to demonstrate error propagatio.
+/// Always returns an [`Error::UsageInvalid`] to demonstrate error propagation.
 ///
 /// # Errors
 ///
